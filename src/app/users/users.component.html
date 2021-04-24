@@ -1,0 +1,24 @@
+<div class="container">
+   <h1 class="m-3">Users List </h1>
+
+   <table  class="table table-bordered m-3">
+      <tr>
+        <th scope="col">First name </th>
+        <th scope="col">Last name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Password</th>
+        <th scope="col">Change Status</th>
+        <th scope="col">Delete User</th>
+
+      </tr>
+      <tr app-users-list *ngFor = "let user of users; let idx = index" 
+          [userItem] = "user" 
+          [userIndex] = "idx" 
+          (idxUser)="deleteUser(idx)"
+          [ngClass] = "user.status ? 'active' : 'inactive'">
+      </tr>
+    </table>
+
+  <app-add-user (onAddUser) = "updateUsersList($event)"></app-add-user>
+  
+</div>

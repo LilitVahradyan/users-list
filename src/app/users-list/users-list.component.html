@@ -1,0 +1,17 @@
+<td>{{user.firstName}} </td>
+<td>{{user.lastName}} </td>
+<td>{{user.age}} </td>
+<td>{{user.password}} </td>
+<td>
+    <button class="btn btn-success" (click) = "changeStatus()"> 
+        {{ user.status ? 'Inactive' : 'Active' }}
+    </button>
+</td>
+<td>
+    <button class="btn btn-danger" (click) = "deleteUser(idx)">
+        Delete
+    </button>
+</td>
+
+       
+  
